@@ -15,6 +15,7 @@ The following code snippets cover some common tasks that are essential in develo
 <br>
 
 **Client Side**
+
 Open the location **`.../MediSync/client`** in **`cmd`** or **`baash`**
 <br>
 *bash:*
@@ -31,6 +32,7 @@ npm i axios
 <br>
 
 **Server Side**
+
 Open the location **`.../MediSync/server`** in **`cmd`** or **`baash`**
 *bash:*
 <br>
