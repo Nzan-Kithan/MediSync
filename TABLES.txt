@@ -1,0 +1,96 @@
+CREATE TABLE Hospitals (
+    HospitalID VARCHAR(20) PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    PhoneNumber VARCHAR(15) NOT NULL UNIQUE,
+    Email VARCHAR(255) NOT NULL UNIQUE,
+    ContactPersonName VARCHAR(255),
+    ContactPersonPosition VARCHAR(255),
+    WebsiteURL VARCHAR(255),
+    Specialties TEXT,
+    IsActive BOOLEAN DEFAULT TRUE,
+    RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    LastUpdated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Staff (
+    StaffID VARCHAR(20) PRIMARY KEY,
+    HospitalID VARCHAR(20),
+    Username VARCHAR(100) NOT NULL UNIQUE,
+    PasswordHash VARCHAR(255) NOT NULL,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Gender ENUM('Male', 'Female') NOT NULL,
+    Position VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL UNIQUE,
+    PhoneNumber VARCHAR(15) NOT NULL UNIQUE,
+    Address VARCHAR(255),
+    City VARCHAR(100),
+    State VARCHAR(100),
+    ZipCode VARCHAR(20),
+    DateOfBirth DATE,
+    CONSTRAINT fk_hospital_staff FOREIGN KEY (HospitalID) REFERENCES Hospitals(HospitalID)
+);
+
+CREATE TABLE Doctors (
+    DoctorID VARCHAR(20) PRIMARY KEY,
+    StaffID VARCHAR(20),
+    Specialty VARCHAR(255),
+    LicenseNumber VARCHAR(255) UNIQUE,
+    YearsOfExperience INT,
+    ConsultationHours VARCHAR(255),
+    CONSTRAINT fk_staff_doctors FOREIGN KEY (StaffID) REFERENCES Staff(StaffID)
+);
+
+CREATE TABLE StaffAttendance (
+    AttendanceID VARCHAR(20) PRIMARY KEY,
+    StaffID VARCHAR(20) NOT NULL,
+    CheckInTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CheckOutTime TIMESTAMP,
+    FOREIGN KEY (StaffID) REFERENCES Staff(StaffID)
+);
+
+CREATE TABLE Patients (
+    PatientID VARCHAR(20) PRIMARY KEY,
+    UserID VARCHAR(36),
+    RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES UserCredentials(UserID)
+);
+
+CREATE TABLE UserCredentials (
+    UserID VARCHAR(36) PRIMARY KEY,
+    Username VARCHAR(100) UNIQUE NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    PasswordHash VARCHAR(255) NOT NULL,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    DateOfBirth DATE,
+    Gender ENUM('Male', 'Female') NOT NULL,
+    PhoneNumber VARCHAR(15),
+    Address VARCHAR(255),
+    City VARCHAR(100),
+    State VARCHAR(100),
+    ZipCode VARCHAR(20),
+    BloodGroup VARCHAR(10),
+    MaritalStatus ENUM('Single', 'Married', 'Divorced', 'Widowed'),
+    Occupation VARCHAR(100),
+    EmergencyContactName VARCHAR(255),
+    EmergencyContactPhone VARCHAR(15),
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL
+);
+
+CREATE TABLE Rooms (
+    RoomID VARCHAR(20) PRIMARY KEY,
+    HospitalID VARCHAR(20),
+    RoomNumber VARCHAR(10) NOT NULL,
+    RoomType VARCHAR(50) NOT NULL,
+    Status ENUM('Available', 'Occupied', 'Under Maintenance') DEFAULT 'Available',
+    MaxCapacity INT NOT NULL,
+    CurrentCapacity INT DEFAULT 0,
+    Equipment TEXT,
+    IsActive BOOLEAN DEFAULT TRUE,
+    RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    LastUpdated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (HospitalID) REFERENCES Hospitals(HospitalID)
+);

@@ -1,0 +1,17 @@
+.settings
+{
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.settings h2
+{
+    color: #333;
+}
+
+.settings p
+{
+    color: #666;
+    font-size: 1.1em;
+}
