@@ -20,4 +20,26 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+router.post('/login', async (req, res) => {
+    try 
+    {
+        const { userId, password } = req.body;
+        // In a real application, you would validate the password here
+        const [result] = await pool.query('SELECT * FROM dum WHERE id = ?', [userId])
+        
+        if (result.length === 0)
+        {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        const userData = result[0];
+        res.json(userData);
+    }
+    catch (error) 
+    {
+        console.error('Error during login:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 export default router

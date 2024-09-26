@@ -10,8 +10,10 @@ import Settings from '../pages/Settings';
 import NotFound from '../pages/NotFound';
 import ProtectedRoute from './ProtectedRoute';
 import { RouterProvider } from 'react-router-dom';
+import About from '../pages/About';
+import RegisterPatient from '../pages/RegisterPatient';
 
-function Approutes()
+function AppRoutes()
 {
     const BrowserRoutes = createBrowserRouter([
         {
@@ -28,7 +30,7 @@ function Approutes()
                 },
                 {
                     path: "/dashboard",
-                    element: <ProtectedRoute element={<Dashboard />} allowedPositions={['staff']} />
+                    element: <ProtectedRoute element={<Dashboard />} allowedPositions={['staff', 'patient']} />
                 },
                 {
                     path: "/profile",
@@ -43,6 +45,14 @@ function Approutes()
                     element: <Login />
                 },
                 {
+                    path: "/register-patient",
+                    element: <RegisterPatient />
+                },
+                {
+                    path: "/about",
+                    element: <About />
+                },
+                {
                     path: "*",
                     element: <NotFound />
                 }
@@ -55,4 +65,4 @@ function Approutes()
     )
 }
 
-export default Approutes;
+export default AppRoutes;

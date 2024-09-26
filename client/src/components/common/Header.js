@@ -1,35 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import './Header.css'; 
+import './Header.css';
+import { FaHome, FaInfoCircle, FaEnvelope, FaUser, FaSignInAlt, FaSignOutAlt, FaTachometerAlt, FaBars } from 'react-icons/fa';
 
-const Header = () =>
-{
-    const { isAuthenticated, position } = useAuth();
+const Header = () => {
+    const { isAuthenticated, logout } = useAuth();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [isMenuOpen]);
 
     return (
         <header className="header">
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/contact-us">Contact Us</Link></li>
-                    {isAuthenticated && (
+            <div className="header-content">
+                <Link to="/" className="logo" onClick={closeMenu}>
+                    MediSync
+                </Link>
+                <div className="menu-icon" onClick={toggleMenu}>
+                    <FaBars />
+                </div>
+                <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+                    <Link to="/" className="nav-item main-nav-item" onClick={closeMenu}><FaHome /> Home</Link>
+                    <Link to="/about" className="nav-item main-nav-item" onClick={closeMenu}><FaInfoCircle /> About</Link>
+                    <Link to="/contact-us" className="nav-item main-nav-item" onClick={closeMenu}><FaEnvelope /> Contact</Link>
+                    <Link to="/dashboard" className="nav-item main-nav-item" onClick={closeMenu}><FaTachometerAlt /> Dashboard</Link>
+                    {isAuthenticated ? (
                         <>
-                            {position == 'staff' && (
-
-                                <li><Link to="/dashboard">Dashboard</Link></li>
-                            )}
-                            <li><Link to="/profile">Profile</Link></li>
-                            <li><Link to="/settings">Settings</Link></li> 
+                            <Link to="/profile" className="nav-item main-nav-item" onClick={closeMenu}><FaUser /> Profile</Link>
+                            <button onClick={() => { logout(); closeMenu(); }} className="nav-item logout-btn">
+                                <FaSignOutAlt /> Logout
+                            </button>
                         </>
-                    )}
-                    <li>
-                        <Link to="/login">
-                            {isAuthenticated ? 'Logout' : 'Login'}
+                    ) : (
+                        <Link to="/login" className="nav-item login-btn" onClick={closeMenu}>
+                            <FaSignInAlt /> Login
                         </Link>
-                    </li>
-                </ul>
-            </nav>
+                    )}
+                </nav>
+            </div>
         </header>
     );
 };

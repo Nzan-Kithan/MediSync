@@ -7,13 +7,15 @@ import './Layout.css';
 const Layout = () =>
 {
     return (
-        <div className="layout">
+        <>
             <Header />
+        <div className="layout">
             <main>
                 <Outlet />
             </main>
             <Footer />
         </div>
+        </>
     );
 };
 

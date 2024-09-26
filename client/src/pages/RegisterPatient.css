@@ -1,4 +1,11 @@
-.login-page {
+:root {
+    --primary-color: #007bff;  /* Assuming this is your primary color */
+    --secondary-color: #6c757d;  /* Assuming this is your secondary color */
+    --accent-color: #28a745;  /* Assuming this is your accent color */
+    --text-color: #333333;  /* Assuming this is your main text color */
+}
+
+.patient-register-page {
     font-family: 'Roboto', Arial, sans-serif;
     color: var(--text-color);
     background-color: #f0f4f8;
@@ -7,8 +14,8 @@
     flex-direction: column;
 }
 
-.login-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/about-banner.jpg');
+.register-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/about-banner.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -29,7 +36,7 @@
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.login-content {
+.register-content {
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -37,29 +44,34 @@
     padding: 40px 20px;
 }
 
-.login-form-container, .logout-container {
+.register-form-container {
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 40px;
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
 }
 
-.login-form-container h2, .logout-container h2 {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.login-form {
+.register-form {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+}
+
+.form-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .form-group {
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group label {
@@ -70,12 +82,13 @@
     color: var(--secondary-color);
 }
 
-.input-icon {
+.form-group label svg {
     margin-right: 10px;
     color: var(--accent-color);
 }
 
-input[type="text"], input[type="password"] {
+.form-group input,
+.form-group select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -84,13 +97,14 @@ input[type="text"], input[type="password"] {
     transition: border-color 0.3s ease;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
+.form-group input:focus,
+.form-group select:focus {
     border-color: var(--accent-color);
     outline: none;
     box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.2);
 }
 
-.login-btn, .logout-btn {
+.register-btn {
     background-color: var(--accent-color);
     color: white;
     border: none;
@@ -103,19 +117,16 @@ input[type="text"]:focus, input[type="password"]:focus {
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 1rem;
 }
 
-.login-btn:hover, .logout-btn:hover {
+.register-btn:hover {
     background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
-.login-btn:active, .logout-btn:active {
+.register-btn:active {
     transform: translateY(0);
-}
-
-.btn-icon {
-    margin-right: 10px;
 }
 
 .error-message {
@@ -125,53 +136,12 @@ input[type="text"]:focus, input[type="password"]:focus {
     font-size: 0.9rem;
 }
 
-.logout-container {
-    text-align: center;
-}
+@media (max-width: 768px) {
+    .form-section {
+        grid-template-columns: 1fr;
+    }
 
-.logout-container p {
-    margin-bottom: 25px;
-    color: var(--text-color);
-}
-
-.register-section {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.register-section p {
-    margin-bottom: 10px;
-}
-
-.register-btn {
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.register-btn:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-.register-btn:active {
-    transform: translateY(0);
-}
-
-.register-btn .btn-icon {
-    margin-right: 8px;
-}
-
-@media (max-width: 480px) {
-    .login-form-container, .logout-container {
+    .register-form-container {
         padding: 30px;
     }
 

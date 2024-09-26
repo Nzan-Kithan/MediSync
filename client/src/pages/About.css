@@ -1,0 +1,139 @@
+.about-page {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+}
+
+.about-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/about-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--light-text-color);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+}
+
+.about-section {
+    padding: 80px 20px;
+}
+
+.about-section:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+}
+
+.icon-wrapper {
+    flex: 0 0 100px;
+    text-align: center;
+}
+
+.section-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+}
+
+.text-content {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.text-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.offering-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offering-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.offering-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.offering-item h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.offering-item p {
+    font-size: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .section-content {
+        flex-direction: column;
+    }
+
+    .icon-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .text-content {
+        padding-left: 0;
+    }
+
+    .offerings-grid {
+        grid-template-columns: 1fr;
+    }
+}

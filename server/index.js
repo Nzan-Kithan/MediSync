@@ -27,5 +27,5 @@ app.use('/dum', dum)
 
 const port = process.env.NODE_PORT || 4000
 const server = app.listen(port, () => {
-    console.log('Server is running on port ' + port)
+    console.log(`Server is running on port ${port}`)
 })
