@@ -94,3 +94,21 @@ CREATE TABLE Rooms (
     LastUpdated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (HospitalID) REFERENCES Hospitals(HospitalID)
 );
+
+CREATE TABLE Appointments (
+    AppointmentID VARCHAR(20) PRIMARY KEY,
+    PatientID VARCHAR(20) NOT NULL,
+    HospitalID VARCHAR(20) NOT NULL,
+    DoctorID VARCHAR(20) NOT NULL,
+    AppointmentType VARCHAR(50) NOT NULL,
+    AppointmentDate DATE NOT NULL,
+    AppointmentStartTime TIME NOT NULL,
+    AppointmentEndTime TIME NOT NULL,
+    Status ENUM('Scheduled', 'Completed', 'Cancelled', 'No-Show') NOT NULL DEFAULT 'Scheduled',
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    Notes TEXT,
+    FOREIGN KEY (PatientID) REFERENCES Patients(PatientID),
+    FOREIGN KEY (HospitalID) REFERENCES Hospitals(HospitalID),
+    FOREIGN KEY (DoctorID) REFERENCES Doctors(DoctorID)
+);

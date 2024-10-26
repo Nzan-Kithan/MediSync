@@ -19,6 +19,7 @@ const Login = () => {
             const userData = await loginPatient(username, password);
             console.log('Login successful:', userData);
             login(userData.id, userData.position);
+            navigate('/dashboard');
         } catch (error) {
             console.error('Login failed:', error.response?.data || error.message);
             setError('Login failed. Please check your credentials.');

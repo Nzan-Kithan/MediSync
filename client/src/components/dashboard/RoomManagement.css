@@ -1,0 +1,158 @@
+.room-management {
+    padding: 20px;
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
+.room-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure the room list takes full width */
+}
+
+.room-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0; /* Adjust margin to only apply vertically */
+    border-radius: 8px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between details and actions */
+    align-items: flex-start; /* Align items to the start */
+    background-color: #f9f9f9; /* Light background for better contrast */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%; /* Make room items take full width */
+}
+
+.room-details {
+    display: flex; /* Use flexbox for details */
+    flex-direction: column; /* Stack details vertically */
+    flex-grow: 1; /* Allow details to take available space */
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.room-item h3 {
+    margin: 0; /* Remove default margin for better alignment */
+    font-size: 1.2em; /* Slightly larger font for room number */
+    color: #333; /* Darker color for better readability */
+}
+
+.room-item p {
+    margin: 5px 0; /* Add some spacing between paragraphs */
+    font-size: 1em; /* Standard font size */
+    color: #555; /* Slightly lighter color for text */
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.room-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-end; /* Align buttons to the right */
+}
+
+.room-actions button {
+    margin-top: 10px; /* Add space between buttons */
+    padding: 10px 15px; /* Add padding for better button size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    background-color: #28a745; /* Change button color to green */
+    color: white; /* Text color for buttons */
+    width: 100%; /* Make buttons full width */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.room-actions button:hover {
+    background-color: #218838; /* Darker shade on hover */
+}
+
+.message {
+    color: green;
+    margin-top: 20px;
+    font-weight: bold; /* Make message bold */
+}
+
+.filter-buttons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-buttons button.active {
+    background-color: #0056b3; /* Darker shade for active button */
+}
+
+.filter-buttons button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.room-type-filter {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.room-type-filter:hover {
+    border-color: #007bff; /* Change border color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .room-item {
+        flex-direction: column; /* Stack details and actions vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .room-actions {
+        align-items: stretch; /* Stretch buttons to full width */
+    }
+
+    .filter-buttons {
+        flex-direction: column; /* Stack filter buttons vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .filter-buttons button {
+        margin-bottom: 10px; /* Space between buttons */
+        width: 100%; /* Make buttons full width */
+    }
+
+    .room-type-filter {
+        width: 100%; /* Make dropdown full width */
+        margin-left: 0; /* Remove left margin */
+        margin-top: 10px; /* Add top margin for spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .room-item {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .room-item h3 {
+        font-size: 1.1em; /* Slightly smaller font for room number */
+    }
+
+    .room-item p {
+        font-size: 0.9em; /* Smaller font size for text */
+    }
+
+    .filter-buttons {
+        width: 100%; /* Ensure filter buttons take full width */
+    }
+}

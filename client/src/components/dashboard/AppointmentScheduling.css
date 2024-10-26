@@ -1,0 +1,531 @@
+:root {
+    --primary-color: #4CAF50; /* Main green */
+    --primary-light: #81C784;
+    --primary-dark: #388E3C;
+    --secondary-color: #2196F3; /* Complementary blue */
+    --secondary-light: #64B5F6;
+    --secondary-dark: #1976D2;
+    --accent-color: #FFC107; /* Yellow for highlights */
+    --danger-color: #FF5722; /* Orange-red for warnings */
+    --danger-light: #FF8A65;
+    --danger-dark: #E64A19;
+    --text-color: #212121;
+    --text-light: #757575;
+    --background-color: #F1F8E9; /* Very light green background */
+    --card-background: #FFFFFF;
+}
+
+.appointment-scheduling {
+    padding: 30px;
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.appointment-scheduling h2 {
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.appointment-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.appointment-item {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px; /* Add space between appointments */
+}
+
+.appointment-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.2);
+}
+
+.appointment-header {
+    background-color: var(--primary-color);
+    color: var(--card-background);
+    padding: 15px 20px;
+    position: relative;
+}
+
+.appointment-header h3 {
+    font-size: 1.2em;
+    margin: 0;
+    font-weight: 600;
+    margin-bottom: 10px; /* Add this line to create space below the title */
+}
+
+.appointment-status-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px; /* Add this line to create space above the buttons */
+}
+
+.appointment-status,
+.cancel-appointment-btn {
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.appointment-status {
+    background-color: #4caf50; /* Darker green */
+    color: #ffffff; /* White text for better contrast */
+    padding: 10px 12px; /* Slightly increase padding */
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+.appointment-status.scheduled {
+    background-color: #4CAF50; /* Green for scheduled */
+}
+
+.appointment-status.cancelled {
+    background-color: #F44336; /* Red for cancelled */
+}
+
+.cancel-btn {
+    background-color: var(--danger-color);
+    color: var(--card-background);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.cancel-btn:hover {
+    background-color: var(--danger-dark);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cancel-btn:active {
+    transform: translateY(1px);
+}
+
+.cancel-btn svg {
+    margin-right: 5px;
+}
+
+.cancel-appointment-btn {
+    background-color: #f44336; /* Brighter red */
+    color: #ffffff; /* White text for better contrast */
+    padding: 10px 15px; /* Slightly increase padding */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: #f44336;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-appointment-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.cancel-appointment-btn:active {
+    transform: translateY(1px);
+}
+
+.cancel-appointment-btn svg {
+    margin-right: 6px;
+    font-size: 1em;
+}
+
+.appointment-actions .cancel-appointment-btn {
+    margin-left: 8px; /* Adds space between this and other buttons */
+}
+
+.appointment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.appointment-category {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.appointment-category h4 {
+    color: var(--primary-color);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.appointment-category h4 svg {
+    font-size: 1.2em;
+}
+
+.appointment-category p {
+    margin: 5px 0;
+    color: var(--text-color);
+    font-size: 0.95em;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.appointment-category p:first-of-type {
+    font-weight: 600; /* Make the first line of details bold */
+}
+
+.add-btn {
+    background-color: var(--primary-color);
+    color: var(--card-background);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    margin: 0 auto 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.add-btn:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+    transform: translateY(-2px);
+}
+
+.add-btn svg {
+    margin-right: 8px;
+}
+
+.no-appointments {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 30px;
+    font-size: 1.1em;
+}
+
+.new-appointment-form {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    animation: slideDown 0.3s ease-out;
+}
+
+.new-appointment-form h3 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-light);
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 15px; /* Adds space between buttons */
+}
+
+.submit-btn,
+.cancel-form-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1; /* Makes buttons take up equal space */
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: var(--card-background);
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.cancel-form-btn {
+    background-color: var(--danger-color);
+    color: var(--card-background);
+}
+
+.cancel-form-btn:hover {
+    background-color: var(--danger-dark);
+    box-shadow: 0 4px 8px rgba(255, 87, 34, 0.3);
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.appointment-list,
+.add-btn,
+.no-appointments {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .appointment-scheduling {
+        padding: 15px;
+    }
+
+    .appointment-list {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-item {
+        margin-bottom: 15px;
+    }
+
+    .appointment-header {
+        padding: 15px;
+    }
+
+    .appointment-header h3 {
+        font-size: 1.1em;
+    }
+
+    .appointment-status-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .appointment-status {
+        font-size: 0.9rem;
+        padding: 3px 8px;
+    }
+
+    .cancel-btn {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+
+    .appointment-grid {
+        padding: 15px;
+    }
+
+    .appointment-category {
+        padding: 12px;
+    }
+
+    .appointment-category h4 {
+        font-size: 1em;
+    }
+
+    .appointment-category p {
+        font-size: 0.9em;
+    }
+
+    .add-btn {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    .new-appointment-form {
+        padding: 20px;
+    }
+
+    .new-appointment-form h3 {
+        font-size: 1.3em;
+    }
+
+    .form-group label {
+        font-size: 0.9em;
+    }
+
+    .form-group select,
+    .form-group input {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .submit-btn,
+    .cancel-form-btn {
+        width: 100%;
+        font-size: 0.9em;
+        padding: 10px;
+    }
+}
+
+/* For even smaller screens */
+@media (max-width: 480px) {
+    .appointment-scheduling h2 {
+        font-size: 1.8em;
+    }
+
+    .appointment-header h3 {
+        font-size: 1em;
+    }
+
+    .appointment-category h4 {
+        font-size: 0.95em;
+    }
+
+    .appointment-category p {
+        font-size: 0.85em;
+    }
+
+    .add-btn {
+        font-size: 1.2em;
+        padding: 8px 12px;
+    }
+
+    .appointment-status-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .appointment-status {
+        font-size: 0.85rem;
+        padding: 3px 6px;
+    }
+
+    .cancel-appointment-btn {
+        font-size: 0.85rem;
+        padding: 3px 6px;
+    }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .appointment-status {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+
+    .cancel-appointment-btn {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .appointment-status-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .appointment-status {
+        font-size: 0.85rem;
+        padding: 3px 6px;
+    }
+
+    .cancel-appointment-btn {
+        font-size: 0.85rem;
+        padding: 3px 6px;
+    }
+}

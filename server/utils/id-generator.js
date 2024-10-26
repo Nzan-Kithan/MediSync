@@ -4,7 +4,7 @@ const tableKeys = {
     hospitals: "HO",
     staff: "SF",
     doctors: "DR",
-    staffattendance: "SA",
+    doctorattendance: "SA",
     patients: "PA",
     usercredentials: "UC",
     tests: "TE",
@@ -14,14 +14,18 @@ const tableKeys = {
     suppliers: "SU",
     centralsupplyroomstorage: "CS",
     departmentalstorage: "DS",
-    pharmacystorage: "PH"
+    pharmacystorage: "PH",
+    appointments: "AP",
+    rooms: "RM",
+    bills: "BL",
+    medicalhistory: "MH"
 }
 
 const tableDateFormats = {
     hospitals: "YYYY",
     staff: "YYYYMM",
     doctors: "YYYYMM",
-    staffattendance: "YYYYMMDD",
+    doctorattendance: "YYYYMMDD",
     patients: "YYYYMMDD",
     usercredentials: "YYYYMMDD",
     tests: "YYYYMM",
@@ -31,14 +35,18 @@ const tableDateFormats = {
     suppliers: "YYYY",
     centralsupplyroomstorage: "YYYYMM",
     departmentalstorage: "YYYYMM",
-    pharmacystorage: "YYYYMM"
+    pharmacystorage: "YYYYMM",
+    appointments: "YYYYMMDD",
+    rooms: "YYYY",
+    bills: "YYYYMMDD",
+    medicalhistory: "YYYYMMDD"
 }
 
 const fieldKeys = {
     hospitals: "HospitalID",
     staff: "StaffID",
     doctors: "DoctorID",
-    staffattendance: "AttendanceID",
+    doctorattendance: "AttendanceID",
     patients: "PatientID",
     usercredentials: "UserID",
     tests: "TestID",
@@ -48,7 +56,11 @@ const fieldKeys = {
     suppliers: "SupplierID",
     centralsupplyroomstorage: "StorageID",
     departmentalstorage: "StorageID",
-    pharmacystorage: "StorageID"
+    pharmacystorage: "StorageID",
+    appointments: "appointmentid",
+    rooms: "RoomID",
+    bills: "BillID",
+    medicalhistory: "HistoryID"
 }
 
 export default async function generateId(tableName)

@@ -1,0 +1,78 @@
+.medical-history-container {
+    padding: 30px;
+    background-color: #f9f9f9; /* Light gray background for the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px 0; /* Margin for spacing */
+    max-width: 1000px; /* Increased max-width for better readability */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+}
+
+.medical-history-container h2 {
+    font-size: 2.5em; /* Title size */
+    color: #2C3E50; /* Dark blue for title */
+    margin-bottom: 20px; /* Space below title */
+    text-align: left; /* Left align the title */
+}
+
+.medical-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between history items */
+}
+
+.medical-history-item {
+    padding: 20px;
+    border: 1px solid #E0E0E0; /* Light gray border */
+    border-radius: 10px;
+    background-color: #ffffff; /* White background for each item */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    color: #333; /* Dark text color for readability */
+    position: relative; /* For pseudo-element positioning */
+}
+
+.medical-history-item:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between; /* Space between date and doctor name */
+    align-items: center; /* Center items vertically */
+}
+
+.visit-date {
+    font-size: 1.3em; /* Slightly larger font for visit date */
+    color: #2980b9; /* Blue color for visit date */
+    font-weight: bold; /* Bold for emphasis */
+}
+
+.doctor-name {
+    font-weight: bold; /* Make doctor name bold */
+    color: #2C3E50; /* Dark color for doctor name */
+    font-size: 1.1em; /* Slightly larger font for doctor name */
+}
+
+.medical-history-item p {
+    margin: 5px 0; /* Space between paragraphs */
+    text-align: left; /* Left align text */
+    line-height: 1.6; /* Increase line height for readability */
+}
+
+.medical-history-item strong {
+    color: #2C3E50; /* Dark color for labels */
+}
+
+/* Optional: Add a decorative element */
+.medical-history-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #2980b9; /* Blue accent line */
+    border-top-left-radius: 10px; /* Rounded corners */
+    border-bottom-left-radius: 10px; /* Rounded corners */
+}

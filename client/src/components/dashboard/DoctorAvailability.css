@@ -1,0 +1,74 @@
+.present-doctors {
+    padding: 20px;
+}
+
+.hospital-selection {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: left;
+}
+
+.hospital-selection label {
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid transparent;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.doctor-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.doctor-item {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-item h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.doctor-item p {
+    margin: 5px 0;
+}
+
+.hospital-filter {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.hospital-filter:hover {
+    border-color: #007bff; /* Change border color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .doctor-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hospital-filter {
+        width: 100%; /* Make dropdown full width */
+        margin-left: 0; /* Remove left margin */
+        margin-top: 10px; /* Add top margin for spacing */
+    }
+}

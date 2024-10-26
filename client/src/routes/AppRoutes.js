@@ -12,7 +12,9 @@ import ProtectedRoute from './ProtectedRoute';
 import { RouterProvider } from 'react-router-dom';
 import About from '../pages/About';
 import RegisterPatient from '../pages/RegisterPatient';
-
+import RegisterHospital from '../pages/RegisterHospital';
+import LoginHospital from '../pages/LoginHospital';
+import LoginStaff from '../pages/LoginStaff';
 function AppRoutes()
 {
     const BrowserRoutes = createBrowserRouter([
@@ -30,11 +32,11 @@ function AppRoutes()
                 },
                 {
                     path: "/dashboard",
-                    element: <ProtectedRoute element={<Dashboard />} allowedPositions={['staff', 'patient']} />
+                    element: <ProtectedRoute element={<Dashboard />} allowedPositions={['staff', 'patient', 'hospital', 'doctor']} />
                 },
                 {
                     path: "/profile",
-                    element: <ProtectedRoute element={<Profile />} allowedPositions={['staff', 'patient']} />
+                    element: <ProtectedRoute element={<Profile />} />
                 },
                 {
                     path: "/settings",
@@ -45,8 +47,20 @@ function AppRoutes()
                     element: <Login />
                 },
                 {
+                    path: "/login-hospital",
+                    element: <LoginHospital />
+                },
+                {
+                    path: "/login-staff",
+                    element: <LoginStaff />
+                },
+                {
                     path: "/register-patient",
                     element: <RegisterPatient />
+                },
+                {
+                    path: "/register-hospital",
+                    element: <RegisterHospital />
                 },
                 {
                     path: "/about",

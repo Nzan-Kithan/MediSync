@@ -1,0 +1,105 @@
+.attendance-management-container {
+    max-width: 800px; /* Increased maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 30px; /* Add padding inside the container */
+    border: 1px solid #dcdcdc; /* Light border for the container */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #f8f9fa; /* Light background for a clean look */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a clean, professional font */
+}
+
+h2 {
+    text-align: center; /* Center the header text */
+    color: #343a40; /* Dark color for the header */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.form-group {
+    display: flex; /* Use flexbox to align items in a column */
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 20px; /* Space below the form group */
+}
+
+.input-group {
+    display: flex; /* Use flexbox for input group */
+    flex-direction: column; /* Stack label and input vertically */
+    margin-bottom: 15px; /* Space below the input group */
+}
+
+.input-group label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Bold label text */
+    color: #495057; /* Darker color for labels */
+}
+
+.input-group input {
+    padding: 12px; /* Padding inside the input */
+    border: 1px solid #ced4da; /* Light border for the input */
+    border-radius: 5px; /* Rounded corners for the input */
+    font-size: 16px; /* Larger font size for better readability */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.input-group input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.doctor-name {
+    display: flex; /* Use flexbox for doctor name */
+    flex-direction: column; /* Stack label and name vertically */
+    border: 1px solid #ced4da; /* Add border around the doctor name */
+    border-radius: 5px; /* Rounded corners for the border */
+    padding: 10px; /* Padding inside the doctor name section */
+    background-color: #ffffff; /* White background for the doctor name section */
+}
+
+.doctor-name label {
+    font-weight: bold; /* Bold label text */
+}
+
+.doctor-name p {
+    margin: 0; /* Remove default margin */
+    text-align: left; /* Align text to the left */
+}
+
+.button-group {
+    display: flex; /* Use flexbox for button group */
+    justify-content: space-between; /* Space buttons evenly */
+}
+
+button {
+    padding: 12px 20px; /* Padding inside buttons */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    background-color: #007bff; /* Corporate blue color */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    font-size: 16px; /* Larger font size for buttons */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.success-message {
+    color: green; /* Green color for success messages */
+    text-align: center; /* Center the success message */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+.error-message {
+    color: red; /* Red color for error messages */
+    text-align: center; /* Center the error message */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+/* Class for when there is no error */
+.error-message.hidden {
+    color: transparent; /* Hide the text color */
+    min-height: 0; /* Collapse height when hidden */
+    background-color: transparent; /* Remove background when hidden */
+    border: none;
+}

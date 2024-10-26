@@ -1,0 +1,73 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Set a fixed width for the modal */
+    text-align: center;
+}
+
+.payment-options {
+    margin-bottom: 20px; /* Space between options and confirm button */
+}
+
+.payment-options button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2C3E50; /* Dark blue for buttons */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-options button:hover {
+    background-color: #1A252F; /* Darker blue on hover */
+}
+
+.confirm-payment {
+    margin: 15px 0; /* Space above and below the confirm payment section */
+}
+
+.pay-button {
+    background-color: #4CAF50; /* Green for the pay button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pay-button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+}
+
+.cancel-button {
+    background-color: #E74C3C; /* Red for cancel button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: #C62828; /* Darker red on hover */
+}

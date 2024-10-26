@@ -1,0 +1,78 @@
+.hospital-login-page {
+    background-color: #f0f8ff; /* Light blue background */
+}
+
+.hospital-login-page .login-banner {
+    background-color: #0077be; /* Darker blue for the banner */
+}
+
+.hospital-login-page .login-form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.hospital-login-page .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.hospital-login-page .form-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #0077be;
+}
+
+.hospital-login-page .form-group label svg {
+    margin-right: 0.5rem;
+}
+
+.hospital-login-page .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.hospital-login-page .login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #0077be;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.hospital-login-page .login-btn:hover {
+    background-color: #005f9e;
+}
+
+.hospital-login-page .error-message {
+    color: #d32f2f;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.hospital-login-page .register-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.hospital-login-page .register-link a {
+    color: #0077be;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hospital-login-page .register-link a:hover {
+    text-decoration: underline;
+}

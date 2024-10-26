@@ -189,9 +189,13 @@ const Home = () => {
                 <div className="cta-section">
                     <h2>Ready to Take Control of Your Healthcare?</h2>
                     <p>Join MediSync today and experience healthcare management like never before.</p>
-                    <Link to="/register-patient">
-                        <button className="cta-button">Get Started <FaArrowRight /></button>
-                    </Link>
+                    <button className="cta-button"
+                        onClick={() => {
+                            window.location.href = '/register-patient';
+                        }}
+                    >
+                        Get Started <FaArrowRight />
+                    </button>
                 </div>
             </div>
         </div>

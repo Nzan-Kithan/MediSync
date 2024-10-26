@@ -1,0 +1,196 @@
+.bill-checking-container {
+    padding: 40px; /* Increased padding for better spacing */
+    background-color: #F9F9F9; /* Light gray background for the container */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 1200px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif; /* Set a common font family */
+    font-size: 1.2em; /* Set a uniform font size for all text (larger) */
+    font-weight: normal; /* Remove bold styling */
+}
+
+.bill-checking-title {
+    color: #333; /* Dark gray for the title */
+    margin-bottom: 40px; /* Increased margin for separation */
+    font-size: 2.8em; /* Increased size for better visibility */
+    text-align: center;
+}
+
+.bill-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bill-item {
+    background-color: #FFFFFF; /* White background for bills */
+    border-radius: 8px;
+    margin-bottom: 20px; /* Increased margin for better separation */
+    padding: 25px; /* Increased padding for better spacing */
+    transition: box-shadow 0.3s ease;
+    border: 1px solid #E0E0E0; /* Light gray border */
+    text-align: left; /* Left align text */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.bill-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.bill-header {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between amount and hospital name */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Space below the header */
+}
+
+.amount {
+    color: #2C3E50; /* Dark color for amount */
+    font-weight: bold; /* Make amount bold for emphasis */
+}
+
+.hospital-name {
+    font-size: 1.6em; /* Increased size for hospital name */
+    color: #2C3E50; /* Dark blue for a professional look */
+}
+
+.bill-details {
+    margin-top: 10px; /* Space above the details */
+}
+
+.status-due-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between status and due date */
+    align-items: center; /* Center items vertically */
+}
+
+.status, .due-date {
+    margin: 5px 0; /* Space between status and due date */
+    font-size: 1.2em; /* Set a uniform size for status and due date */
+}
+
+.description {
+    color: #777; /* Light gray */
+    margin-top: 10px; /* Space above the description */
+    font-size: 1.2em; /* Set a uniform size for description */
+}
+
+.bill-item p {
+    margin: 10px 0; /* Increased margin for better spacing */
+    color: #555; /* Medium gray for general text */
+    font-size: 1.2em; /* Set a uniform size for general text */
+}
+
+/* Styles for different statuses */
+.status-paid {
+    color: #4CAF50; /* Green for paid status */
+}
+
+.status-pending {
+    color: #FFA500; /* Orange for pending status */
+}
+
+.status-cancelled {
+    color: #F44336; /* Red for canceled status */
+}
+
+.bill-item .due-date {
+    color: #E74C3C; /* Red for due date */
+    font-size: 1.2em; /* Set a uniform size for due date */
+}
+
+.bill-item .description {
+    font-size: 1.2em; /* Set a uniform size for description */
+    color: #777; /* Light gray */
+    margin-top: 10px;
+}
+
+/* Button styles */
+.pay-button, .paid-button {
+    font-size: 1.2em; /* Set a uniform size for buttons */
+    padding: 10px 20px; /* Add padding for better clickability */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.pay-button {
+    background-color: #4CAF50; /* Green for Pay button */
+    color: white; /* White text */
+}
+
+.paid-button {
+    background-color: #A9A9A9; /* Gray for Paid button */
+    color: white; /* White text */
+}
+
+.pay-button:hover {
+    background-color: #45A049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.paid-button:hover {
+    background-color: #888; /* Darker gray on hover */
+}
+
+/* Notification styles */
+.notification {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #d4edda; /* Light green background for success notifications */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb; /* Light green border */
+}
+
+/* Additional styles for error notifications (if needed) */
+.notification.error {
+    background-color: #f8d7da; /* Light red background for error notifications */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb; /* Light red border */
+}
+
+.empty-list {
+    font-size: 1.5rem;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .bill-checking-title {
+        font-size: 2em; /* Adjust title size for smaller screens */
+    }
+
+    .bill-item {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .amount, .hospital-name, .status, .due-date, .description {
+        font-size: 1em; /* Adjust text size for smaller screens */
+    }
+
+    .pay-button, .paid-button {
+        font-size: 1em; /* Adjust button size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .bill-checking-title {
+        font-size: 1.5em; /* Further adjust title size for very small screens */
+    }
+
+    .bill-item {
+        padding: 10px; /* Further reduce padding for very small screens */
+    }
+
+    .amount, .hospital-name, .status, .due-date, .description {
+        font-size: 0.9em; /* Further adjust text size for very small screens */
+    }
+
+    .pay-button, .paid-button {
+        font-size: 0.9em; /* Further adjust button size for very small screens */
+    }
+}
